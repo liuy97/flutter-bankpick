@@ -2,7 +2,7 @@
 
 A Flutter mobile template.
 
-Nativescript version [ns-bankpick](https://github.com/liuy97/flutter-bankpick)
+Nativescript version [ns-bankpick](https://github.com/liuy97/bankpick)
 
 ## Getting Started
 * flutter pub get
