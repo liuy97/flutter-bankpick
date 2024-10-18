@@ -1,0 +1,164 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'build_dots.dart';
+
+class OnBoarding3View extends StatelessWidget {
+  final AnimationController animationController;
+  final VoidCallback onNextClick;
+
+  const OnBoarding3View(
+      {super.key,
+      required this.animationController,
+      required this.onNextClick});
+
+  @override
+  Widget build(BuildContext context) {
+    final firstHalfAnimation =
+        Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.4,
+        0.6,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+    final secondHalfAnimation =
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.6,
+        0.8,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+
+    final moodFirstHalfAnimation =
+        Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.4,
+        0.6,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+    final moodSecondHalfAnimation =
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.6,
+        0.8,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+    final imageFirstHalfAnimation =
+        Tween<Offset>(begin: const Offset(4, 0), end: const Offset(0, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.4,
+        0.6,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+    final imageSecondHalfAnimation =
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-4, 0))
+            .animate(CurvedAnimation(
+      parent: animationController,
+      curve: const Interval(
+        0.6,
+        0.8,
+        curve: Curves.fastOutSlowIn,
+      ),
+    ));
+
+    return SlideTransition(
+      position: firstHalfAnimation,
+      child: SlideTransition(
+        position: secondHalfAnimation,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 100),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  child: SlideTransition(
+                position: imageFirstHalfAnimation,
+                child: SlideTransition(
+                  position: imageSecondHalfAnimation,
+                  child: Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 350, maxHeight: 250),
+                    child: Image.asset(
+                      "assets/images/3.png",
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              )),
+              SlideTransition(
+                  position: moodFirstHalfAnimation,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      3,
+                      (int index) => buildDots(index: index, current: 2),
+                    ),
+                  )),
+              Padding(
+                  padding: const EdgeInsets.only(
+                      left: 32, right: 32, top: 16, bottom: 16),
+                  child: Text(
+                    AppLocalizations.of(context)!.onBoardingHeader3,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        fontSize: 26.0, fontWeight: FontWeight.bold),
+                  )),
+              SlideTransition(
+                position: moodFirstHalfAnimation,
+                child: SlideTransition(
+                  position: moodSecondHalfAnimation,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 32, right: 32, top: 16, bottom: 16),
+                    child: Text(
+                      AppLocalizations.of(context)!.onBoardingDescription3,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 14.0),
+                    ),
+                  ),
+                ),
+              ),
+              SlideTransition(
+                  position: moodFirstHalfAnimation,
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 32),
+                      child: Row(children: [
+                        Expanded(
+                            child: FilledButton(
+                          style: TextButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 20),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(16)),
+                              )),
+                          onPressed: onNextClick,
+                          child: Text(
+                            AppLocalizations.of(context)!.onBoardingNext,
+                            style: const TextStyle(fontSize: 16.0),
+                          ),
+                        ))
+                      ])))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

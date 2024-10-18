@@ -1,0 +1,51 @@
+import 'dart:async';
+
+import 'package:rxdart_ext/state_stream.dart';
+
+import '../../../services/api/api_client.dart';
+import 'search_state.dart';
+
+class SearchBloc {
+  final Sink<String> onTextChanged;
+  final StateStream<SearchState> state;
+
+  final StreamSubscription<void> _subscription;
+
+  factory SearchBloc(ApiClient api) {
+    final onTextChanged = PublishSubject<String>();
+
+    final state = onTextChanged
+        // If the text has not changed, do not perform a new search
+        .distinct()
+        // Wait for the user to stop typing for 250ms before running a search
+        .debounceTime(const Duration(milliseconds: 250))
+        // Call the Github api with the given search term and convert it to a
+        // State. If another search term is entered, switchMap will ensure
+        // the previous search is discarded so we don't deliver stale results
+        // to the View.
+        .switchMap<SearchState>((String term) {
+      return _search(term, api);
+    })
+        // The initial state to deliver to the screen.
+        .publishState(const SearchNoTerm());
+
+    final subscription = state.connect();
+
+    return SearchBloc._(onTextChanged, state, subscription);
+  }
+
+  SearchBloc._(this.onTextChanged, this.state, this._subscription);
+
+  void dispose() {
+    _subscription.cancel();
+    onTextChanged.close();
+  }
+
+  static Stream<SearchState> _search(String term, ApiClient api) => term.isEmpty
+      ? Stream.value(const SearchNoTerm())
+      : Rx.fromCallable(() => api.search(term))
+          .map((result) =>
+              result.isEmpty ? const SearchEmpty() : SearchPopulated(result))
+          .startWith(const SearchLoading())
+          .onErrorReturn(const SearchError());
+}

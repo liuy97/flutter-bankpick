@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "33306351265",
+    "project_id": "bankpick-f9337",
+    "storage_bucket": "bankpick-f9337.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33306351265:android:d709efecc4a876a38442e0",
+        "android_client_info": {
+          "package_name": "io.github.liuy97.bankpick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCocfUdPFaZfJJBW6VNCMQHu8yoGMRd5Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
