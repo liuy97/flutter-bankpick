@@ -13,14 +13,16 @@ class MyProfile extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.myProfileTitle,
-          style: const TextStyle(
-            fontSize: 18,
-            color: Color.fromRGBO(0x1e, 0x1e, 0x2d, 1.0),
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         actions: [
-          IconButton(
-              icon: const Icon(IconData(0xe911, fontFamily: 'icomoon')),
+          MaterialButton(
+              elevation: 0,
+              color: const Color(0xfff4f4f4),
+              textColor: Colors.black,
+              padding: const EdgeInsets.all(10),
+              shape: const CircleBorder(),
+              child: const Icon(IconData(0xe911, fontFamily: 'icomoon')),
               onPressed: () {
                 GoRouter.of(context).go('/profile/myProfile/editProfile');
               })
@@ -41,14 +43,22 @@ class MyProfile extends StatelessWidget {
                         fit: BoxFit.fitHeight,
                       ),
                     ]),
-                    const Expanded(
+                    Expanded(
                         child: Padding(
-                            padding: EdgeInsets.only(left: 22),
+                            padding: const EdgeInsets.only(left: 22),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Tanya Myroniuk'),
-                                  Text('Senior Designer')
+                                  Text('Tanya Myroniuk',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium!
+                                          .copyWith(fontSize: 17)),
+                                  Text(
+                                    'Senior Designer',
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                  )
                                 ])))
                   ]),
                   GestureDetector(
@@ -62,11 +72,13 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe910, fontFamily: 'icomoon'))),
+                                    IconData(0xe910, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .myProfilePersonalInformation,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -83,11 +95,13 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe90f, fontFamily: 'icomoon'))),
+                                    IconData(0xe90f, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .myProfilePaymentPreferences,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -104,11 +118,13 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe90e, fontFamily: 'icomoon'))),
+                                    IconData(0xe90e, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .myProfileBanksAndCards,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -125,11 +141,13 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe90d, fontFamily: 'icomoon'))),
+                                    IconData(0xe90d, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .myProfileNotifications,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -146,11 +164,14 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe90c, fontFamily: 'icomoon'))),
+                                  IconData(0xe90c, fontFamily: 'icomoon'),
+                                  color: Color(0xffa2a2a7),
+                                )),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .myProfileMessageCenter,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -167,10 +188,12 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe90b, fontFamily: 'icomoon'))),
+                                    IconData(0xe90b, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!.myProfileAddress,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)
@@ -187,10 +210,12 @@ class MyProfile extends StatelessWidget {
                             const Padding(
                                 padding: EdgeInsets.only(right: 16.0),
                                 child: Icon(
-                                    IconData(0xe901, fontFamily: 'icomoon'))),
+                                    IconData(0xe901, fontFamily: 'icomoon'),
+                                    color: Color(0xffa2a2a7))),
                             Expanded(
                               child: Text(
                                 AppLocalizations.of(context)!.myProfileSettings,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ),
                             const Icon(Icons.chevron_right)

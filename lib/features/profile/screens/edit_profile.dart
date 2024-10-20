@@ -12,10 +12,7 @@ class EditProfile extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.editProfileTitle,
-          style: const TextStyle(
-            fontSize: 18,
-            color: Color.fromRGBO(0x1e, 0x1e, 0x2d, 1.0),
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: SafeArea(
@@ -30,41 +27,41 @@ class EditProfile extends StatelessWidget {
                 height: 70,
                 fit: BoxFit.fitHeight,
               ),
-              const Text(
+              Text(
                 'Tanya Myroniuk',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Color.fromRGBO(0x1e, 0x1e, 0x2d, 1.0),
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 17),
               ),
-              const Text(
+              Text(
                 'Senior Designer',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 1.0),
-                ),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               Padding(
                   padding: const EdgeInsets.only(top: 32.0),
                   child: Row(children: [
                     Expanded(
                         child: Text(
-                      AppLocalizations.of(context)!.editProfileFullName,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 100),
-                      ),
-                    ))
+                            AppLocalizations.of(context)!.editProfileFullName,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: const Color(0xffA2A2A7),
+                                )))
                   ])),
-              const Padding(
-                  padding: EdgeInsets.only(top: 16.0, bottom: 10.0),
+              Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 10.0),
                   child: Row(children: [
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(right: 16.0),
-                        child: Icon(IconData(0xe910, fontFamily: 'icomoon'))),
+                        child: Icon(IconData(0xe910, fontFamily: 'icomoon'),
+                            color: Color(0xffa2a2a7))),
                     Expanded(
                       child: Text(
                         'Tanya Myroniuk',
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ])),
@@ -75,21 +72,22 @@ class EditProfile extends StatelessWidget {
                     Expanded(
                         child: Text(
                       AppLocalizations.of(context)!.editProfileEmailAddress,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 100),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: const Color(0xffA2A2A7),
+                          ),
                     ))
                   ])),
-              const Padding(
-                  padding: EdgeInsets.only(top: 16.0, bottom: 10.0),
+              Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 10.0),
                   child: Row(children: [
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(right: 16.0),
-                        child: Icon(IconData(0xe902, fontFamily: 'icomoon'))),
+                        child: Icon(IconData(0xe902, fontFamily: 'icomoon'),
+                            color: Color(0xffa2a2a7))),
                     Expanded(
                       child: Text(
                         'Tanya Myroniuk@gmail.com',
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ])),
@@ -100,21 +98,22 @@ class EditProfile extends StatelessWidget {
                     Expanded(
                         child: Text(
                       AppLocalizations.of(context)!.editProfilePhoneNumber,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 100),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: const Color(0xffA2A2A7),
+                          ),
                     ))
                   ])),
-              const Padding(
-                  padding: EdgeInsets.only(top: 16.0, bottom: 10.0),
+              Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 10.0),
                   child: Row(children: [
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(right: 16.0),
-                        child: Icon(IconData(0xe906, fontFamily: 'icomoon'))),
+                        child: Icon(IconData(0xe906, fontFamily: 'icomoon'),
+                            color: Color(0xffa2a2a7))),
                     Expanded(
                       child: Text(
                         '+8801712663389',
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ])),
@@ -125,20 +124,28 @@ class EditProfile extends StatelessWidget {
                     Expanded(
                         child: Text(
                       AppLocalizations.of(context)!.editProfileBirthDate,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 100),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: const Color(0xffA2A2A7),
+                          ),
                     ))
                   ])),
-              const Padding(
-                  padding: EdgeInsets.only(top: 16.0),
+              Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('28'),
-                      Text('September'),
-                      Text('2000')
+                      Text(
+                        '28',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      Text(
+                        'September',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      Text(
+                        '2000',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      )
                       //
                     ],
                   ))

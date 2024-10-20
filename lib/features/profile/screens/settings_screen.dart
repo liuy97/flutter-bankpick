@@ -17,18 +17,17 @@ class SettingsScreen extends ConsumerWidget {
         appBar: AppBar(
           backgroundColor: Theme.of(context).cardColor,
           title: Text(AppLocalizations.of(context)!.settingsTitle,
-              style: const TextStyle(fontSize: 18)),
+              style: Theme.of(context).textTheme.titleMedium),
           actions: [
-            TextButton(
+            MaterialButton(
+              elevation: 0,
               onPressed: () async {
                 await ref.read(firebaseAuthProvider).signOut();
               },
-              style: TextButton.styleFrom(
-                backgroundColor: const Color(0xfff4f4f4),
-                iconColor: Colors.black,
-                padding: const EdgeInsets.all(11),
-                shape: const CircleBorder(),
-              ),
+              color: const Color(0xfff4f4f4),
+              textColor: Colors.black,
+              padding: const EdgeInsets.all(10),
+              shape: const CircleBorder(),
               child: const Icon(
                 IconData(0xe913, fontFamily: 'icomoon'),
                 size: 24,
@@ -50,10 +49,12 @@ class SettingsScreen extends ConsumerWidget {
                               Expanded(
                                   child: Text(
                                 AppLocalizations.of(context)!.settingsGeneral,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xffA2A2A7),
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      color: Color(0xffA2A2A7),
+                                    ),
                               ))
                             ])),
                         GestureDetector(
@@ -68,9 +69,9 @@ class SettingsScreen extends ConsumerWidget {
                                     child: Text(
                                         AppLocalizations.of(context)!
                                             .settingsLanguage,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                        )),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge),
                                   ),
                                   Text(
                                     ref.watch(LocalSettings.languageProvider) ==
@@ -79,9 +80,12 @@ class SettingsScreen extends ConsumerWidget {
                                             .languageChinese
                                         : AppLocalizations.of(context)!
                                             .languageEnglish,
-                                    style: const TextStyle(
-                                      fontSize: 14,
-                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .copyWith(
+                                          color: Color(0xffA2A2A7),
+                                        ),
                                   ),
                                   const Icon(
                                     IconData(0xe912, fontFamily: 'icomoon'),
@@ -102,9 +106,9 @@ class SettingsScreen extends ConsumerWidget {
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .settingsMyProfile,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge,
                                     ),
                                   ),
                                   const Icon(
@@ -126,9 +130,9 @@ class SettingsScreen extends ConsumerWidget {
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .settingsContactUs,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge,
                                     ),
                                   ),
                                   const Icon(
@@ -145,10 +149,12 @@ class SettingsScreen extends ConsumerWidget {
                               Expanded(
                                   child: Text(
                                 AppLocalizations.of(context)!.settingsSecurity,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Color.fromRGBO(0xA2, 0xA2, 0xA7, 100),
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      color: Color(0xffA2A2A7),
+                                    ),
                               ))
                             ])),
                         GestureDetector(
@@ -164,9 +170,9 @@ class SettingsScreen extends ConsumerWidget {
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .settingsChangePassword,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge,
                                     ),
                                   ),
                                   const Icon(
@@ -189,9 +195,9 @@ class SettingsScreen extends ConsumerWidget {
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .settingsPrivacyPolicy,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge,
                                     ),
                                   ),
                                   const Icon(
@@ -209,10 +215,12 @@ class SettingsScreen extends ConsumerWidget {
                                 child: Text(
                                   AppLocalizations.of(context)!
                                       .settingsPrivacyDescription,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                        color: Color(0xffA2A2A7),
+                                      ),
                                 ),
                               )
                             ])),
@@ -224,10 +232,7 @@ class SettingsScreen extends ConsumerWidget {
                                 child: Text(
                                   AppLocalizations.of(context)!
                                       .settingsBiometric,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  style: Theme.of(context).textTheme.labelLarge,
                                 ),
                               ),
                               Switch(

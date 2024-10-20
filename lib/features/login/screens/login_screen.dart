@@ -106,7 +106,7 @@ class LoginScreen extends HookConsumerWidget {
               const Gap(36),
               ProgressButtonWidget(
                 onPressed: onLoginPressed,
-                label: AppLocalizations.of(context)!.loginPassword,
+                label: AppLocalizations.of(context)!.loginButton,
               ),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text(

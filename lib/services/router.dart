@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../features/onboarding/screens/onboarding_screen.dart';
 import '../provider/local_settings.dart';
@@ -115,7 +116,7 @@ GoRouter router(RouterRef ref) {
       body: (_) => const StatisticScreen(),
       icon: const IconData(0xe907, fontFamily: 'icomoon'),
       selectedIcon: const IconData(0xe907, fontFamily: 'icomoon'),
-      label: 'Statistic',
+      label: 'Statistics',
     ),
     NavigationItem(
         path: '/profile',
@@ -269,6 +270,12 @@ class ScaffoldWithNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     void onDestinationSelected(int index) =>
         context.go(navigationItems[index].path);
+    final labels = {
+      'Home': AppLocalizations.of(context)!.tabsHome,
+      'MyCards': AppLocalizations.of(context)!.tabsMyCards,
+      'Statistics': AppLocalizations.of(context)!.tabsStatistics,
+      'Profile': AppLocalizations.of(context)!.tabsSettings,
+    };
 
     // Use navigation rail instead of navigation bar when the screen width is
     // larger than 600dp.
@@ -286,7 +293,7 @@ class ScaffoldWithNavigation extends StatelessWidget {
                     selectedIcon: item.selectedIcon != null
                         ? Icon(item.selectedIcon)
                         : null,
-                    label: Text(item.label),
+                    label: Text(labels[item.label]!),
                   )
               ],
               extended: true,
@@ -308,7 +315,7 @@ class ScaffoldWithNavigation extends StatelessWidget {
               icon: Icon(item.icon),
               selectedIcon:
                   item.selectedIcon != null ? Icon(item.selectedIcon) : null,
-              label: item.label,
+              label: (labels[item.label]!),
             )
         ],
       ),

@@ -25,6 +25,7 @@ class MyCardsScreenState extends ConsumerState<MyCardsScreen> {
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.myCardsTitle,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           actions: [
             IconButton(
@@ -68,11 +69,14 @@ class MyCardsScreenState extends ConsumerState<MyCardsScreen> {
                   },
                   loading: () =>
                       const Center(child: CircularProgressIndicator()))),
-          const Padding(
+          Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Text('Monthly spending limit',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(fontSize: 18)),
               ])),
           Container(
               padding: EdgeInsets.all(16),

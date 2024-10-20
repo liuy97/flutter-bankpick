@@ -10,7 +10,8 @@ class TopUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Top up  money'),
+          title: Text('Top up  money',
+              style: Theme.of(context).textTheme.titleMedium),
         ),
         body: SafeArea(
           child: Column(children: [

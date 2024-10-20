@@ -12,9 +12,7 @@ class PrivacyPolicy extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.privacyPolicyTitle,
-          style: const TextStyle(
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: SafeArea(
@@ -23,21 +21,13 @@ class PrivacyPolicy extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
             child: Column(children: [
               Text(AppLocalizations.of(context)!.privacyPolicy1,
-                  style: const TextStyle(
-                    fontSize: 14,
-                  )),
+                  style: Theme.of(context).textTheme.bodyMedium),
               Text(AppLocalizations.of(context)!.privacyPolicy2,
-                  style: const TextStyle(
-                    fontSize: 14,
-                  )),
+                  style: Theme.of(context).textTheme.bodyMedium),
               Text(AppLocalizations.of(context)!.privacyPolicy3,
-                  style: const TextStyle(
-                    fontSize: 14,
-                  )),
+                  style: Theme.of(context).textTheme.bodyMedium),
               Text(AppLocalizations.of(context)!.privacyPolicy4,
-                  style: const TextStyle(
-                    fontSize: 14,
-                  )),
+                  style: Theme.of(context).textTheme.bodyMedium),
             ]),
           ),
         ),

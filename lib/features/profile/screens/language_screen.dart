@@ -14,7 +14,7 @@ class LanguageScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.languageTitle,
-          style: const TextStyle(fontSize: 18),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: SafeArea(
@@ -89,7 +89,7 @@ class FlagItem extends StatelessWidget {
           countryCode == 'CN'
               ? AppLocalizations.of(context)!.languageChinese
               : AppLocalizations.of(context)!.languageEnglish,
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         const Expanded(
           child: SizedBox(),

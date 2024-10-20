@@ -16,6 +16,7 @@ class SendMoneyScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.sendMoneyTitle,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
         body: SafeArea(
@@ -53,19 +54,25 @@ class SendMoneyScreen extends StatelessWidget {
                         Row(
                           children: [
                             Text(AppLocalizations.of(context)!.sendMoneySendTo,
-                                style: const TextStyle(
-                                    fontSize: 14, color: Color(0xff7E848D))),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: const Color(0xff7E848D))),
                           ],
                         ),
                         const SizedBox(height: 20),
                         SeparatedRow(
                             separatorBuilder: () => const Gap(18),
                             children: [
-                              const Column(children: [
-                                CircleAvatar(
-                                    child: Icon(IconData(0xe917,
+                              Column(children: [
+                                const CircleAvatar(
+                                    child: const Icon(IconData(0xe917,
                                         fontFamily: 'icomoon'))),
-                                Text('Add', style: TextStyle(fontSize: 11))
+                                Text('Add',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(fontSize: 11))
                               ]),
                               Column(children: [
                                 CircleAvatar(
@@ -75,8 +82,11 @@ class SendMoneyScreen extends StatelessWidget {
                                   height: 50,
                                   fit: BoxFit.fitHeight,
                                 )),
-                                const Text('Yamilet',
-                                    style: TextStyle(fontSize: 11))
+                                Text('Yamilet',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(fontSize: 11))
                               ]),
                               Column(children: [
                                 CircleAvatar(
@@ -86,8 +96,11 @@ class SendMoneyScreen extends StatelessWidget {
                                   height: 50,
                                   fit: BoxFit.fitHeight,
                                 )),
-                                const Text('Alexa',
-                                    style: TextStyle(fontSize: 11))
+                                Text('Alexa',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(fontSize: 11))
                               ]),
                               Column(children: [
                                 CircleAvatar(
@@ -97,8 +110,11 @@ class SendMoneyScreen extends StatelessWidget {
                                   height: 50,
                                   fit: BoxFit.fitHeight,
                                 )),
-                                const Text('Yakub',
-                                    style: TextStyle(fontSize: 11))
+                                Text('Yakub',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(fontSize: 11))
                               ]),
                               Column(children: [
                                 CircleAvatar(
@@ -108,8 +124,11 @@ class SendMoneyScreen extends StatelessWidget {
                                   height: 50,
                                   fit: BoxFit.fitHeight,
                                 )),
-                                const Text('Krishna',
-                                    style: TextStyle(fontSize: 11))
+                                Text('Krishna',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(fontSize: 11))
                               ]),
                             ])
                       ])),
@@ -128,14 +147,17 @@ class SendMoneyScreen extends StatelessWidget {
                                 child: Text(
                                     AppLocalizations.of(context)!
                                         .sendMoneyEnterYourAmount,
-                                    style: const TextStyle(
-                                        fontSize: 11,
-                                        color: Color(0xff7E848D)))),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(color: Color(0xff7E848D)))),
                             Text(
                                 AppLocalizations.of(context)!
                                     .sendMoneyChangeCurrency,
-                                style: const TextStyle(
-                                    fontSize: 11, color: Color(0xffFF3F60)))
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(color: Color(0xffFF3F60)))
                           ],
                         ),
                         const SizedBox(height: 20),

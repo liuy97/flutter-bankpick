@@ -45,7 +45,14 @@ class AppTheme {
         useSecondary: useSecondaryKeyColor,
         useTertiary: useTertiaryKeyColor,
       ),
-      // tones: FlexTone.values[usedFlexTone].tones(Brightness.light),
+      textTheme: const TextTheme(
+          titleMedium: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xff1E1E2D)),
+          bodyLarge: TextStyle(fontSize: 16, color: Color(0xff1E1E2D)),
+          bodyMedium: TextStyle(fontSize: 14, color: Color(0xff1E1E2D)),
+          bodySmall: TextStyle(fontSize: 12, color: Color(0xff1E1E2D))),
       //
       appBarElevation: appBarElevation,
       appBarStyle: appBarStyle,
@@ -108,11 +115,12 @@ class AppTheme {
         useSecondary: useSecondaryKeyColor,
         useTertiary: useTertiaryKeyColor,
       ),
-      // textTheme: TextTheme(
-      //     bodyLarge: TextStyle(fontSize: 16, color: Color()),
-      //     bodyMedium: TextStyle(fontSize: 14, color: Color()),
-      //     bodySmall: TextStyle(fontSize: 12, color: Color())),
-      // tones: FlexTone.values[usedFlexTone].tones(Brightness.dark),
+      textTheme: const TextTheme(
+          titleMedium: TextStyle(
+              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+          bodyLarge: TextStyle(fontSize: 16, color: Colors.white),
+          bodyMedium: TextStyle(fontSize: 14, color: Colors.white),
+          bodySmall: TextStyle(fontSize: 12, color: Colors.white)),
       //
       appBarElevation: appBarElevation,
       appBarStyle: appBarStyle,

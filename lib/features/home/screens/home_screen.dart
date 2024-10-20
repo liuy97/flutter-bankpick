@@ -41,12 +41,16 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                               Text(
                                 AppLocalizations.of(context)!
                                     .homeScreenWelcomeBack,
-                                style: const TextStyle(fontSize: 12),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
+                                      color: const Color(0xff7e848d),
+                                    ),
                               ),
-                              const Text(
+                              Text(
                                 'Tanya Myroniuk',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.titleMedium,
                               )
                             ]))),
                 MaterialButton(
@@ -100,7 +104,11 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      const Text('Sent')
+                      Text('Sent',
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 13,
+                                  ))
                     ]),
                     Column(children: [
                       MaterialButton(
@@ -117,7 +125,11 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      const Text('Receive')
+                      Text('Receive',
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 13,
+                                  ))
                     ]),
                     Column(children: [
                       MaterialButton(
@@ -134,7 +146,11 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      const Text('Loan')
+                      Text('Loan',
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 13,
+                                  ))
                     ]),
                     Column(children: [
                       MaterialButton(
@@ -151,16 +167,19 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      const Text('Topup')
+                      Text('Topup',
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 13,
+                                  ))
                     ])
                   ])),
           Padding(
               padding: const EdgeInsets.all(16),
               child: Row(children: [
-                const Expanded(
+                Expanded(
                     child: Text('Transaction',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18))),
+                        style: Theme.of(context).textTheme.titleMedium)),
                 TextButton(
                     onPressed: () {},
                     child:

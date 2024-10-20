@@ -10,7 +10,8 @@ class LoanMoneyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Loan money'),
+          title: Text('Loan money',
+              style: Theme.of(context).textTheme.titleMedium),
         ),
         body: SafeArea(
           child: Column(children: [

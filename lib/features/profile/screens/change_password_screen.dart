@@ -17,9 +17,7 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.changePasswordTitle,
-          style: const TextStyle(
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: SafeArea(
@@ -36,8 +34,10 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                       Text(
                         AppLocalizations.of(context)!
                             .changePasswordCurrentPassword,
-                        style: const TextStyle(
-                            fontSize: 14, color: Color(0xffA2A2A7)),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Color(0xffA2A2A7)),
                       )
                     ])),
                 TextFormField(
@@ -53,7 +53,7 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                     prefixIcon: Padding(
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: Icon(IconData(0xe903, fontFamily: 'icomoon'),
-                            size: 22)),
+                            color: Color(0xffa2a2a7), size: 22)),
                     prefixIconConstraints: BoxConstraints(minWidth: 22),
                   ),
                   textInputAction: TextInputAction.next,
@@ -63,8 +63,10 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                     child: Row(children: [
                       Text(
                         AppLocalizations.of(context)!.changePasswordNewPassword,
-                        style: const TextStyle(
-                            fontSize: 14, color: Color(0xffA2A2A7)),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Color(0xffA2A2A7)),
                       )
                     ])),
                 TextFormField(
@@ -79,12 +81,12 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                     prefixIcon: Padding(
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: Icon(IconData(0xe903, fontFamily: 'icomoon'),
-                            size: 22)),
+                            size: 22, color: Color(0xffa2a2a7))),
                     prefixIconConstraints: BoxConstraints(minWidth: 22),
                     suffixIcon: Padding(
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: Icon(IconData(0xe904, fontFamily: 'icomoon'),
-                            size: 22)),
+                            size: 22, color: Color(0xffa2a2a7))),
                     suffixIconConstraints: BoxConstraints(minWidth: 22),
                   ),
                   textInputAction: TextInputAction.next,
@@ -95,8 +97,10 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                       Text(
                         AppLocalizations.of(context)!
                             .changePasswordConfirmNewPassword,
-                        style: const TextStyle(
-                            fontSize: 14, color: Color(0xffA2A2A7)),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Color(0xffA2A2A7)),
                       )
                     ])),
                 TextFormField(
@@ -111,12 +115,12 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                     prefixIcon: Padding(
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: Icon(IconData(0xe903, fontFamily: 'icomoon'),
-                            size: 22)),
+                            size: 22, color: Color(0xffa2a2a7))),
                     prefixIconConstraints: BoxConstraints(minWidth: 22),
                     suffixIcon: Padding(
                         padding: EdgeInsets.only(right: 8, bottom: 10),
                         child: Icon(IconData(0xe904, fontFamily: 'icomoon'),
-                            size: 22)),
+                            size: 22, color: Color(0xffa2a2a7))),
                     suffixIconConstraints: BoxConstraints(minWidth: 22),
                   ),
                   textInputAction: TextInputAction.next,
@@ -127,8 +131,10 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                       Text(
                         AppLocalizations.of(context)!
                             .changePasswordRequirements,
-                        style: const TextStyle(
-                            fontSize: 14, color: Color(0xffA2A2A7)),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Color(0xffA2A2A7)),
                       )
                     ])),
                 Row(
@@ -146,8 +152,7 @@ class ChangePasswordScreenState extends ConsumerState<ChangePasswordScreen> {
                             )),
                         child: Text(
                             AppLocalizations.of(context)!.changePasswordButton,
-                            style: const TextStyle(
-                                fontSize: 14, color: Colors.white)),
+                            style: Theme.of(context).textTheme.titleMedium),
                         onPressed: () {},
                       ),
                     )),

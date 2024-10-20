@@ -13,6 +13,7 @@ class RequestMoneyScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.requestMoneyTitle,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
         body: SafeArea(
@@ -28,8 +29,10 @@ class RequestMoneyScreen extends StatelessWidget {
                               Text(
                                 AppLocalizations.of(context)!
                                     .requestMoneyPayerName,
-                                style: const TextStyle(
-                                    fontSize: 14, color: Color(0xffA2A2A7)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: const Color(0xffA2A2A7)),
                               ),
                               Row(children: [
                                 const Padding(
@@ -42,18 +45,22 @@ class RequestMoneyScreen extends StatelessWidget {
                                   child: Text(
                                     AppLocalizations.of(context)!
                                         .requestMoneyPersonalInformation,
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ),
                               ]),
                               Text(
                                 AppLocalizations.of(context)!
                                     .requestMoneyEmailAddress,
-                                style: const TextStyle(
-                                    fontSize: 14, color: Color(0xffA2A2A7)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: const Color(0xffA2A2A7)),
                               ),
-                              const Row(children: [
-                                Padding(
-                                    padding: EdgeInsets.only(
+                              Row(children: [
+                                const Padding(
+                                    padding: const EdgeInsets.only(
                                         right: 16.0, top: 16, bottom: 10),
                                     child: Icon(
                                         IconData(0xe902, fontFamily: 'icomoon'),
@@ -61,17 +68,21 @@ class RequestMoneyScreen extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     'Tanya Myroniuk@gmail.com',
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ),
                               ]),
                               Text(
                                 AppLocalizations.of(context)!
                                     .requestMoneyDescription,
-                                style: const TextStyle(
-                                    fontSize: 14, color: Color(0xffA2A2A7)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: const Color(0xffA2A2A7)),
                               ),
-                              const Row(children: [
-                                Padding(
+                              Row(children: [
+                                const Padding(
                                     padding: EdgeInsets.only(
                                         right: 16.0, top: 16, bottom: 10),
                                     child: Icon(
@@ -80,14 +91,18 @@ class RequestMoneyScreen extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     'Tanya Myroniuk',
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ),
                               ]),
                               Text(
                                 AppLocalizations.of(context)!
                                     .requestMoneyMonthlyDueBy,
-                                style: const TextStyle(
-                                    fontSize: 14, color: Color(0xffA2A2A7)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: const Color(0xffA2A2A7)),
                               ),
                               Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +116,10 @@ class RequestMoneyScreen extends StatelessWidget {
                                             decoration: const BoxDecoration(
                                                 border: Border(
                                                     bottom: BorderSide())),
-                                            child: const Text('28',
+                                            child: Text('28',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium,
                                                 textAlign: TextAlign.center))),
                                     const SizedBox(width: 20),
                                     Expanded(
@@ -111,7 +129,10 @@ class RequestMoneyScreen extends StatelessWidget {
                                             decoration: const BoxDecoration(
                                                 border: Border(
                                                     bottom: BorderSide())),
-                                            child: const Text('09',
+                                            child: Text('09',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium,
                                                 textAlign: TextAlign.center))),
                                     const SizedBox(width: 20),
                                     Expanded(
@@ -121,7 +142,10 @@ class RequestMoneyScreen extends StatelessWidget {
                                             decoration: const BoxDecoration(
                                                 border: Border(
                                                     bottom: BorderSide())),
-                                            child: const Text('2024',
+                                            child: Text('2024',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium,
                                                 textAlign: TextAlign.center))),
                                   ]),
                               const SizedBox(height: 20),

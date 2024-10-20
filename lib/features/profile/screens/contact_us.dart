@@ -12,9 +12,7 @@ class ContactUs extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.contactUsTitle,
-          style: const TextStyle(
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: SafeArea(
