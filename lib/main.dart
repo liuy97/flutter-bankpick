@@ -29,18 +29,18 @@ Future<void> main() async {
 
   runApp(UncontrolledProviderScope(
     container: container,
-    child: const _MainApp(),
+    child: const MainApp(),
   ));
 }
 
-class _MainApp extends ConsumerStatefulWidget {
-  const _MainApp();
+class MainApp extends ConsumerStatefulWidget {
+  const MainApp({super.key});
 
   @override
-  ConsumerState<_MainApp> createState() => _ThemeDemoAppState();
+  ConsumerState<MainApp> createState() => _ThemeDemoAppState();
 }
 
-class _ThemeDemoAppState extends ConsumerState<_MainApp>
+class _ThemeDemoAppState extends ConsumerState<MainApp>
     with WidgetsBindingObserver {
   @override
   void initState() {

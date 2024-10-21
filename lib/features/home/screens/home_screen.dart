@@ -104,7 +104,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      Text('Sent',
+                      Text(AppLocalizations.of(context)!.homeScreenSend,
                           style:
                               Theme.of(context).textTheme.bodySmall!.copyWith(
                                     fontSize: 13,
@@ -125,7 +125,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      Text('Receive',
+                      Text(AppLocalizations.of(context)!.homeScreenReceive,
                           style:
                               Theme.of(context).textTheme.bodySmall!.copyWith(
                                     fontSize: 13,
@@ -146,7 +146,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      Text('Loan',
+                      Text(AppLocalizations.of(context)!.homeScreenLoan,
                           style:
                               Theme.of(context).textTheme.bodySmall!.copyWith(
                                     fontSize: 13,
@@ -167,7 +167,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
                           size: 24,
                         ),
                       ),
-                      Text('Topup',
+                      Text(AppLocalizations.of(context)!.homeScreenTopUp,
                           style:
                               Theme.of(context).textTheme.bodySmall!.copyWith(
                                     fontSize: 13,
@@ -178,12 +178,18 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
               padding: const EdgeInsets.all(16),
               child: Row(children: [
                 Expanded(
-                    child: Text('Transaction',
+                    child: Text(
+                        AppLocalizations.of(context)!
+                            .statisticScreenTransaction,
                         style: Theme.of(context).textTheme.titleMedium)),
                 TextButton(
                     onPressed: () {},
-                    child:
-                        const Text('Sell All', style: TextStyle(fontSize: 14)))
+                    child: Text(
+                        AppLocalizations.of(context)!.statisticScreenSeeAll,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Theme.of(context).primaryColor)))
               ])),
           const Expanded(child: EntriesWidget())
         ],

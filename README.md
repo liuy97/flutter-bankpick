@@ -7,6 +7,7 @@ Nativescript version [ns-bankpick](https://github.com/liuy97/bankpick)
 ## Getting Started
 * flutter pub get
 * dart run build_runner build
+* flutter pub add intl:any
 * flutter run
 
 ## features

@@ -687,7 +687,7 @@ class LocalSettings {
       languageProvider = NotifierProvider<SettingsEntry<String>, String>(
     () {
       return SettingsEntry<String>(
-        defaultValue: 'CN',
+        defaultValue: 'US',
         key: language,
       );
     },
